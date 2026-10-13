@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sarah | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      font-family: 'Inter', sans-serif;
+
+      background: #f8faff;
+
+      color: #26334b;
+
+      line-height: 1.7;
+
+    }
+
+    a {
+
+      text-decoration: none;
+
+      color: inherit;
+
+    }
+
+    .container {
+
+      width: 90%;
+
+      max-width: 1050px;
+
+      margin: auto;
+
+    }
+
+    header {
+
+      background: white;
+
+      padding: 22px 0;
+
+      border-bottom: 1px solid #e8edf6;
+
+    }
+
+    nav {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+    }
+
+    .logo {
+
+      color: #7299e8;
+
+      font-size: 25px;
+
+      font-weight: 800;
+
+    }
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 20px;
+
+      font-size: 14px;
+
+    }
+
+    .hero {
+
+      min-height: 520px;
+
+      display: grid;
+
+      grid-template-columns: 1.4fr 1fr;
+
+      gap: 40px;
+
+      align-items: center;
+
+      padding-top: 65px;
+
+      padding-bottom: 65px;
+
+    }
+
+    .tag {
+
+      display: inline-block;
+
+      background: #eaf1ff;
+
+      color: #527bc9;
+
+      padding: 7px 14px;
+
+      border-radius: 30px;
+
+      font-size: 13px;
+
+      margin-bottom: 20px;
+
+    }
+
+    h1 {
+
+      font-size: clamp(38px, 6vw, 65px);
+
+      line-height: 1.15;
+
+      margin-bottom: 20px;
+
+    }
+
+    h1 span {
+
+      color: #7299e8;
+
+    }
+
+    .hero p, .muted {
+
+      color: #718096;
+
+    }
+
+    .hero p {
+
+      margin-bottom: 25px;
+
+    }
+
+    .btn {
+
+      display: inline-block;
+
+      padding: 12px 20px;
+
+      border-radius: 10px;
+
+      margin: 5px 5px 5px 0;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+    }
+
+    .primary {
+
+      background: #7299e8;
+
+      color: white;
+
+    }
+
+    .secondary {
+
+      background: white;
+
+      border: 1px solid #e1e7f0;
+
+    }
+
+    .profile {
+
+      min-height: 300px;
+
+      background: linear-gradient(135deg, #e7efff, #f0eaff);
+
+      border-radius: 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 25px;
+
+    }
+
+    .avatar {
+
+      width: 115px;
+
+      height: 115px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      display: grid;
+
+      place-items: center;
+
+      font-size: 48px;
+
+      margin-bottom: 18px;
+
+    }
+
+    section {
+
+      padding: 65px 0;
+
+    }
+
+    .heading {
+
+      text-align: center;
+
+      margin-bottom: 35px;
+
+    }
+
+    .heading h2 {
+
+      font-size: 30px;
+
+      margin-bottom: 8px;
+
+    }
+
+    .about {
+
+      max-width: 800px;
+
+      margin: auto;
+
+      background: white;
+
+      border: 1px solid #e8edf6;
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      color: #718096;
+
+    }
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+
+    }
+
+    .card {
+
+      background: white;
+
+      border: 1px solid #e8edf6;
+
+      padding: 25px;
+
+      border-radius: 18px;
+
+      transition: 0.2s;
+
+    }
+
+    .card:hover {
+
+      transform: translateY(-4px);
+
+    }
+
+    .card h3 {
+
+      margin: 10px 0;
+
+    }
+
+    .card p {
+
+      color: #718096;
+
+      font-size: 14px;
+
+    }
+
+    .project-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 20px;
+
+    }
+
+    .project-type {
+
+      color: #7564b8;
+
+      background: #f0edff;
+
+      padding: 5px 10px;
+
+      border-radius: 8px;
+
+      font-size: 12px;
+
+    }
+
+    .project-card h3 {
+
+      margin-top: 18px;
+
+    }
+
+    .project-card p {
+
+      margin: 10px 0 18px;
+
+    }
+
+    .project-link {
+
+      color: #527bc9;
+
+      font-weight: 600;
+
+      font-size: 14px;
+
+    }
+
+    .contact {
+
+      background: linear-gradient(135deg, #eaf1ff, #f0eaff);
+
+      padding: 45px 20px;
+
+      text-align: center;
+
+      border-radius: 25px;
+
+    }
+
+    .contact p {
+
+      margin: 12px 0 20px;
+
+      color: #718096;
+
+    }
+
+    footer {
+
+      padding: 25px;
+
+      text-align: center;
+
+      color: #718096;
+
+      font-size: 13px;
+
+      border-top: 1px solid #e8edf6;
+
+    }
+
+    @media (max-width: 700px) {
+
+      .hero {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .grid, .project-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .nav-links {
+
+        gap: 10px;
+
+        font-size: 11px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a class="logo" href="#">Sarah.</a>
+
+        <div class="nav-links">
+
+          <a href="#about">About</a>
+
+          <a href="#skills">Skills</a>
+
+          <a href="#projects">Projects</a>
+
+          <a href="#contact">Contact</a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <div class="container hero">
+
+      <div>
+
+        <span class="tag">Computer Science Student</span>
+
+        <h1>Hi, I'm Sarah.<br><span>Future Developer.</span></h1>
+
+        <p>
+
+          I'm a Computer Science student passionate about application
+
+          development, technology, and creating useful digital experiences.
+
+        </p>
+
+        <a class="btn primary" href="#projects">Explore My Work</a>
+
+        <a class="btn secondary" href="#contact">Contact Me</a>
+
+      </div>
+
+      <div class="profile">
+
+        <div class="avatar">👩🏻‍💻</div>
+
+        <h2>Sarah</h2>
+
+        <p class="muted">Learning · Building · Growing</p>
+
+      </div>
+
+    </div>
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="heading">
+
+          <h2>About Me</h2>
+
+          <p class="muted">Get to know me</p>
+
+        </div>
+
+        <div class="about">
+
+          I'm a Computer Science student interested in software
+
+          development, mobile applications, and IT infrastructure.
+
+          I enjoy learning new technologies, solving problems, and
+
+          building projects that help me grow professionally.
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="skills">
+
+      <div class="container">
+
+        <div class="heading">
+
+          <h2>My Skills</h2>
+
+          <p class="muted">Technologies I work with</p>
+
+        </div>
+
+        <div class="grid">
+
+          <div class="card">
+
+            <div>💻</div>
+
+            <h3>Programming</h3>
+
+            <p>Java, Dart, HTML, CSS, PHP</p>
+
+          </div>
+
+          <div class="card">
+
+            <div>📱</div>
+
+            <h3>App Development</h3>
+
+            <p>Flutter and mobile application development</p>
+
+          </div>
+
+          <div class="card">
+
+            <div>🌐</div>
+
+            <h3>IT & Networking</h3>
+
+            <p>VMware, Windows Server, and networking fundamentals</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="projects">
+
+      <div class="container">
+
+        <div class="heading">
+
+          <h2>My Projects</h2>
+
+          <p class="muted">Some of my work</p>
+
+        </div>
+
+        <div class="project-grid">
+
+          <div class="card project-card">
+
+            <span class="project-type">Mobile App</span>
+
+            <h3>FitReminder</h3>
+
+            <p>
+
+              A fitness reminder application designed to help users
+
+              maintain healthy habits and stay consistent.
+
+            </p>
+
+            <a class="project-link"
+
+               href="https://github.com/"
+
+               target="_blank"
+
+               rel="noopener noreferrer">View Project ↗</a>
+
+          </div>
+
+          <div class="card project-card">
+
+            <span class="project-type">Web Development</span>
+
+            <h3>Personal Portfolio</h3>
+
+            <p>
+
+              A personal website presenting my technical skills,
+
+              projects, and professional interests.
+
+            </p>
+
+            <a class="project-link"
+
+               href="https://github.com/"
+
+               target="_blank"
+
+               rel="noopener noreferrer">View Project ↗</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact">
+
+          <h2>Let's Connect!</h2>
+
+          <p>I'm always open to learning opportunities and new projects.</p>
+
+          <a class="btn primary"
+
+             href="https://github.com/"
+
+             target="_blank"
+
+             rel="noopener noreferrer">My GitHub</a>
+
+          <a class="btn secondary"
+
+             href="mailto:your-email@example.com">Email Me</a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    © 2026 Sarah. Built with passion and curiosity.
+
+  </footer>
+
+</body>
+
+</html>
+
+</escape>
+
